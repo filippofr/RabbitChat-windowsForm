@@ -39,15 +39,23 @@
 			label1 = new Label();
 			buttonSend = new Button();
 			textBox2 = new TextBox();
+			Logs = new TabPage();
+			textBox1 = new TextBox();
+			buttonSended = new Button();
+			buttonRecived = new Button();
+			listBox2 = new ListBox();
+			label4 = new Label();
 			tabControl1.SuspendLayout();
 			auth.SuspendLayout();
 			chat.SuspendLayout();
+			Logs.SuspendLayout();
 			SuspendLayout();
 			// 
 			// tabControl1
 			// 
 			tabControl1.Controls.Add(auth);
 			tabControl1.Controls.Add(chat);
+			tabControl1.Controls.Add(Logs);
 			tabControl1.Location = new Point(1, 3);
 			tabControl1.Name = "tabControl1";
 			tabControl1.SelectedIndex = 0;
@@ -178,6 +186,63 @@
 			textBox2.Size = new Size(307, 27);
 			textBox2.TabIndex = 13;
 			// 
+			// Logs
+			// 
+			Logs.Controls.Add(label4);
+			Logs.Controls.Add(listBox2);
+			Logs.Controls.Add(buttonRecived);
+			Logs.Controls.Add(buttonSended);
+			Logs.Controls.Add(textBox1);
+			Logs.Location = new Point(4, 29);
+			Logs.Name = "Logs";
+			Logs.Size = new Size(477, 440);
+			Logs.TabIndex = 2;
+			Logs.Text = "Logs";
+			Logs.UseVisualStyleBackColor = true;
+			// 
+			// textBox1
+			// 
+			textBox1.Location = new Point(180, 31);
+			textBox1.Name = "textBox1";
+			textBox1.Size = new Size(208, 27);
+			textBox1.TabIndex = 0;
+			// 
+			// buttonSended
+			// 
+			buttonSended.Location = new Point(124, 81);
+			buttonSended.Name = "buttonSended";
+			buttonSended.Size = new Size(94, 29);
+			buttonSended.TabIndex = 1;
+			buttonSended.Text = "Inviati";
+			buttonSended.UseVisualStyleBackColor = true;
+			// 
+			// buttonRecived
+			// 
+			buttonRecived.Location = new Point(274, 81);
+			buttonRecived.Name = "buttonRecived";
+			buttonRecived.Size = new Size(94, 29);
+			buttonRecived.TabIndex = 2;
+			buttonRecived.Text = "Ricevuti";
+			buttonRecived.UseVisualStyleBackColor = true;
+			// 
+			// listBox2
+			// 
+			listBox2.FormattingEnabled = true;
+			listBox2.ItemHeight = 20;
+			listBox2.Location = new Point(9, 116);
+			listBox2.Name = "listBox2";
+			listBox2.Size = new Size(457, 304);
+			listBox2.TabIndex = 3;
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.Location = new Point(84, 34);
+			label4.Name = "label4";
+			label4.Size = new Size(75, 20);
+			label4.TabIndex = 4;
+			label4.Text = "Username";
+			// 
 			// FormSender
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
@@ -191,6 +256,8 @@
 			auth.PerformLayout();
 			chat.ResumeLayout(false);
 			chat.PerformLayout();
+			Logs.ResumeLayout(false);
+			Logs.PerformLayout();
 			ResumeLayout(false);
 		}
 
@@ -209,5 +276,11 @@
 		private Label label3;
 		private ListBox listBox1;
 		private Label labelAuth;
+		private TabPage Logs;
+		private TextBox textBox1;
+		private Button buttonSended;
+		private Button buttonRecived;
+		private ListBox listBox2;
+		private Label label4;
 	}
 }

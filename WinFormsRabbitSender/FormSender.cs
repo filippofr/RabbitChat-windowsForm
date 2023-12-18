@@ -17,11 +17,12 @@ namespace WinFormsRabbitSender
 		private IModel channel;
 		User currentUser;
 		EventingBasicConsumer basicEvent;
+		string dbUrl = Environment.DbUrl;
 		public FormSender() {
 			InitializeComponent();
 			Clear();
 
-			dbClient = new MongoClient("mongodb://localhost:27017/");
+			dbClient = new MongoClient(dbUrl);
 
 			var database = dbClient.GetDatabase("chat-rabbit");
 			usersCollection = database.GetCollection<User>("auth");
@@ -29,6 +30,8 @@ namespace WinFormsRabbitSender
 
 			buttonAuth.Click += ButtonAuth_Click;
 			buttonSend.Click += ButtonSend_Click;
+			buttonSended.Click += ButtonSended_Click;
+			buttonRecived.Click += ButtonRecived_Click;
 
 			ConnectionFactory connectionFactory = new ConnectionFactory();
 			connectionFactory.HostName = "localhost";
@@ -41,8 +44,33 @@ namespace WinFormsRabbitSender
 			basicEvent.Received += BasicEvent_Received;
 		}
 
+		private async void ButtonRecived_Click(object? sender, EventArgs e) {
+			if(textBox1.Text != null || textBox1.Text != "") {
+				var filter = Builders<Message>.Filter.Eq(m => m.reciver, textBox1.Text);
+				var messages = await chatCollection.Find(filter).ToListAsync();
+
+				printMessages(messages);
+			}
+		}
+
+		private async void ButtonSended_Click(object? sender, EventArgs e) {
+			if(textBox1.Text != null || textBox1.Text != "") {
+				var filter = Builders<Message>.Filter.Eq(m => m.sender, textBox1.Text);
+				var messages = await chatCollection.Find(filter).ToListAsync();
+
+				printMessages(messages);
+			}
+		}
+		private void printMessages(List<Message> list) {
+			Clear();
+			foreach(var message in list) {
+				string mess = $"{message.sender}->{message.reciver}: {message.text}";
+				listBox2.Items.Add(mess);
+			}
+		}
 		private void Clear() {
 			listBox1.Items.Clear();
+			listBox2.Items.Clear();
 		}
 
 		private void ButtonSend_Click(object? sender, EventArgs e) {
