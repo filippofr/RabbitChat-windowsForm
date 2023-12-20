@@ -40,11 +40,12 @@
 			buttonSend = new Button();
 			textBox2 = new TextBox();
 			Logs = new TabPage();
-			textBox1 = new TextBox();
-			buttonSended = new Button();
-			buttonRecived = new Button();
-			listBox2 = new ListBox();
 			label4 = new Label();
+			listBox2 = new ListBox();
+			buttonRecived = new Button();
+			buttonSended = new Button();
+			textBox1 = new TextBox();
+			label5 = new Label();
 			tabControl1.SuspendLayout();
 			auth.SuspendLayout();
 			chat.SuspendLayout();
@@ -64,6 +65,7 @@
 			// 
 			// auth
 			// 
+			auth.Controls.Add(label5);
 			auth.Controls.Add(label3);
 			auth.Controls.Add(label2);
 			auth.Controls.Add(textBox5);
@@ -80,7 +82,7 @@
 			// label3
 			// 
 			label3.AutoSize = true;
-			label3.Location = new Point(114, 139);
+			label3.Location = new Point(181, 233);
 			label3.Name = "label3";
 			label3.Size = new Size(70, 20);
 			label3.TabIndex = 4;
@@ -89,7 +91,7 @@
 			// label2
 			// 
 			label2.AutoSize = true;
-			label2.Location = new Point(114, 35);
+			label2.Location = new Point(181, 129);
 			label2.Name = "label2";
 			label2.Size = new Size(75, 20);
 			label2.TabIndex = 3;
@@ -97,21 +99,21 @@
 			// 
 			// textBox5
 			// 
-			textBox5.Location = new Point(114, 162);
+			textBox5.Location = new Point(181, 256);
 			textBox5.Name = "textBox5";
 			textBox5.Size = new Size(125, 27);
 			textBox5.TabIndex = 2;
 			// 
 			// textBox4
 			// 
-			textBox4.Location = new Point(114, 68);
+			textBox4.Location = new Point(181, 162);
 			textBox4.Name = "textBox4";
 			textBox4.Size = new Size(125, 27);
 			textBox4.TabIndex = 1;
 			// 
 			// buttonAuth
 			// 
-			buttonAuth.Location = new Point(145, 246);
+			buttonAuth.Location = new Point(195, 318);
 			buttonAuth.Name = "buttonAuth";
 			buttonAuth.Size = new Size(94, 29);
 			buttonAuth.TabIndex = 0;
@@ -200,30 +202,14 @@
 			Logs.Text = "Logs";
 			Logs.UseVisualStyleBackColor = true;
 			// 
-			// textBox1
+			// label4
 			// 
-			textBox1.Location = new Point(180, 31);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(208, 27);
-			textBox1.TabIndex = 0;
-			// 
-			// buttonSended
-			// 
-			buttonSended.Location = new Point(124, 81);
-			buttonSended.Name = "buttonSended";
-			buttonSended.Size = new Size(94, 29);
-			buttonSended.TabIndex = 1;
-			buttonSended.Text = "Inviati";
-			buttonSended.UseVisualStyleBackColor = true;
-			// 
-			// buttonRecived
-			// 
-			buttonRecived.Location = new Point(274, 81);
-			buttonRecived.Name = "buttonRecived";
-			buttonRecived.Size = new Size(94, 29);
-			buttonRecived.TabIndex = 2;
-			buttonRecived.Text = "Ricevuti";
-			buttonRecived.UseVisualStyleBackColor = true;
+			label4.AutoSize = true;
+			label4.Location = new Point(84, 34);
+			label4.Name = "label4";
+			label4.Size = new Size(75, 20);
+			label4.TabIndex = 4;
+			label4.Text = "Username";
 			// 
 			// listBox2
 			// 
@@ -234,14 +220,40 @@
 			listBox2.Size = new Size(457, 304);
 			listBox2.TabIndex = 3;
 			// 
-			// label4
+			// buttonRecived
 			// 
-			label4.AutoSize = true;
-			label4.Location = new Point(84, 34);
-			label4.Name = "label4";
-			label4.Size = new Size(75, 20);
-			label4.TabIndex = 4;
-			label4.Text = "Username";
+			buttonRecived.Location = new Point(274, 81);
+			buttonRecived.Name = "buttonRecived";
+			buttonRecived.Size = new Size(94, 29);
+			buttonRecived.TabIndex = 2;
+			buttonRecived.Text = "Ricevuti";
+			buttonRecived.UseVisualStyleBackColor = true;
+			// 
+			// buttonSended
+			// 
+			buttonSended.Location = new Point(124, 81);
+			buttonSended.Name = "buttonSended";
+			buttonSended.Size = new Size(94, 29);
+			buttonSended.TabIndex = 1;
+			buttonSended.Text = "Inviati";
+			buttonSended.UseVisualStyleBackColor = true;
+			// 
+			// textBox1
+			// 
+			textBox1.Location = new Point(180, 31);
+			textBox1.Name = "textBox1";
+			textBox1.Size = new Size(208, 27);
+			textBox1.TabIndex = 0;
+			// 
+			// label5
+			// 
+			label5.AutoSize = true;
+			label5.Font = new Font("Segoe UI", 15F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			label5.Location = new Point(151, 62);
+			label5.Name = "label5";
+			label5.Size = new Size(191, 35);
+			label5.TabIndex = 5;
+			label5.Text = "Autenticazione";
 			// 
 			// FormSender
 			// 
@@ -282,5 +294,6 @@
 		private Button buttonRecived;
 		private ListBox listBox2;
 		private Label label4;
+		private Label label5;
 	}
 }
